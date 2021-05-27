@@ -215,21 +215,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void multiply(View view){
 
-//        int [][]b = {{0,0},{0,0}} ;
-//
-//        for (int i = 0; i < 2; i++) {
-//            a.add(new ArrayList<Integer>());
-//            for (int j = 0; j < 2; j++) {
-//                for (int k = 0; k < 2; k++) {
-//                    b[i][j] += array1.get(i).get(k)*array2.get(k).get(j);
-//                }
-//                System.out.println(b[i][j]);
-//                a.get(i).add(j, b[i][j]);
-//            }
-//
-//        }
-
-
         mul();
         System.out.println(a.toString());
 
@@ -333,6 +318,7 @@ public class MainActivity extends AppCompatActivity {
         submit = findViewById(R.id.submit);
         submit3 = findViewById(R.id.submit3);
         next3 = findViewById(R.id.next3);
+        resett = findViewById(R.id.reset);
 
 //      Set Visibility Invisible
         sizee.setVisibility(View.INVISIBLE);
@@ -340,6 +326,8 @@ public class MainActivity extends AppCompatActivity {
         matrices.setVisibility(View.INVISIBLE);
         resultMatrix.setVisibility(View.INVISIBLE);
         result3x3.setVisibility(View.INVISIBLE);
+
+        singleMatrix.setVisibility(View.INVISIBLE);
 
 
 //        EditText
@@ -360,7 +348,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        resett = findViewById(R.id.reset);
 //        resett.setVisibility(View.INVISIBLE);
 
 
