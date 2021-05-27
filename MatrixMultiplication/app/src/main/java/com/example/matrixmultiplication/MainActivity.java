@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     ConstraintLayout page1, sizee, operation, mat2x2_1, resultMatrix, matrices, mat3x3, result3x3;
 
     EditText a00,a01,a10,a11, z00, z01,z02, z10, z11, z12, z20, z21, z22;
-    TextView matric, result00, result01, result10, result11, matric3, result300, result301, result302, result310, result311, result312, result320, result321, result322;
+    TextView matric, result00, result01, result10, result11, matric3, result300, result301, result302, result310, result311, result312, result320, result321, result322, resultMatric3, matric2;
 
     int row, col;
 
@@ -37,12 +37,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void dispresult(ArrayList<ArrayList<Integer>> arrayList){
         if (row==2 && col==2) {
+
+            matric2.setText("The Sum");
             result00.setText(Integer.toString(arrayList.get(0).get(0)));
             result01.setText(Integer.toString(arrayList.get(0).get(1)));
             result10.setText(Integer.toString(arrayList.get(1).get(0)));
             result11.setText(Integer.toString(arrayList.get(1).get(1)));
         }
-        else if(row==3 && col == 3){
+        else if(row==3 && col==3){
+            resultMatric3.setText("The Sum");
             result300.setText(Integer.toString((arrayList.get(0).get(0))));
             result301.setText(Integer.toString((arrayList.get(0).get(1))));
             result302.setText(Integer.toString((arrayList.get(0).get(2))));
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             result321.setText(Integer.toString((arrayList.get(2).get(1))));
             result322.setText(Integer.toString((arrayList.get(2).get(2))));
         }
+        row = col = 0;
     }
 
     public void singleMatrix(View view){
@@ -78,9 +82,6 @@ public class MainActivity extends AppCompatActivity {
         matric.setText("MATRIX 1");
         mat3x3.setVisibility(View.INVISIBLE);
 
-
-
-
         a00.setText(null);
         a01.setText(null);
         a10.setText(null);
@@ -90,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public  void mat3x3(View view){
-        int row = col = 3;
+        row = col = 3;
         matrices.setVisibility(View.VISIBLE);
         sizee.setVisibility(View.INVISIBLE);
 
@@ -158,7 +159,8 @@ public class MainActivity extends AppCompatActivity {
         operation.setVisibility(View.INVISIBLE);
         matrices.setVisibility(View.VISIBLE);
 
-        mat2x2_1.setVisibility(View.INVISIBLE);
+//        mat2x2_1.setVisibility(View.INVISIBLE);
+//        mat3x3.setVisibility(View.INVISIBLE);
         if(row==2 && col==2){
             resultMatrix.setVisibility(View.VISIBLE);
         }
@@ -166,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
             result3x3.setVisibility(View.VISIBLE);
         }
         dispresult(a);
-        a.clear();
+
 
     }
 
@@ -234,9 +236,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submit3(View view){
-        array1.add(new ArrayList<Integer>(Arrays.asList(Integer.parseInt(z00.getText().toString()),Integer.parseInt(z01.getText().toString()), Integer.parseInt(z02.getText().toString()))));
-        array1.add(new ArrayList<Integer>(Arrays.asList(Integer.parseInt(z10.getText().toString()),Integer.parseInt(z11.getText().toString()), Integer.parseInt(z12.getText().toString()))));
-        array1.add(new ArrayList<Integer>(Arrays.asList(Integer.parseInt(z20.getText().toString()),Integer.parseInt(z21.getText().toString()), Integer.parseInt(z22.getText().toString()))));
+        array2.add(new ArrayList<Integer>(Arrays.asList(Integer.parseInt(z00.getText().toString()),Integer.parseInt(z01.getText().toString()), Integer.parseInt(z02.getText().toString()))));
+        array2.add(new ArrayList<Integer>(Arrays.asList(Integer.parseInt(z10.getText().toString()),Integer.parseInt(z11.getText().toString()), Integer.parseInt(z12.getText().toString()))));
+        array2.add(new ArrayList<Integer>(Arrays.asList(Integer.parseInt(z20.getText().toString()),Integer.parseInt(z21.getText().toString()), Integer.parseInt(z22.getText().toString()))));
 
         System.out.println(array2.toString());
 
@@ -356,6 +358,9 @@ public class MainActivity extends AppCompatActivity {
         result320 = findViewById(R.id.result320);
         result321 = findViewById(R.id.result321);
         result322 = findViewById(R.id.result322);
+
+        resultMatric3 = findViewById(R.id.resultMatric3);
+        matric2 = findViewById(R.id.matric2);
 
 
     }
