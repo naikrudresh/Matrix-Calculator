@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         page1.setVisibility(View.VISIBLE);
         resultMatrix.setVisibility(View.INVISIBLE);
         result3x3.setVisibility(View.INVISIBLE);
+        row = col = 0;
         clear();
     }
 
@@ -174,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
     public void back(View view){
         matrices.setVisibility(View.INVISIBLE);
         operation.setVisibility(View.VISIBLE);
+        a.clear();
     }
 
     public void addition(View view){
