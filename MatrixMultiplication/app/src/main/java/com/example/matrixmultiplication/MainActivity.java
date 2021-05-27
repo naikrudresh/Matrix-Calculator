@@ -137,12 +137,20 @@ public class MainActivity extends AppCompatActivity {
        }
    }
 
-   public void mul(int[][]b){
+   public void mul(){
 
-       for (int i = 0; i < 2; i++) {
+       int b[][] = new int[row][col];
+
+       for (int i = 0;i<row; i++){
+           for (int j=0;j<col;j++){
+               b[i][j]=0;
+           }
+       }
+
+       for (int i = 0; i < row; i++) {
            a.add(new ArrayList<Integer>());
-           for (int j = 0; j < 2; j++) {
-               for (int k = 0; k < 2; k++) {
+           for (int j = 0; j < row; j++) {
+               for (int k = 0; k < col; k++) {
                    b[i][j] += array1.get(i).get(k)*array2.get(k).get(j);
                }
                System.out.println(b[i][j]);
@@ -219,25 +227,21 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //
 //        }
-        if(row == 2 && col == 2){
-            b = new int[2][2];
-            b = {{0,0},{0,0}} ;
-        }
-        else {
-            b = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
-        }
 
-        mul(b);
+
+        mul();
         System.out.println(a.toString());
 
         operation.setVisibility(View.INVISIBLE);
         matrices.setVisibility(View.VISIBLE);
-
-        mat2x2_1.setVisibility(View.INVISIBLE);
-        resultMatrix.setVisibility(View.VISIBLE);
+        if(row==2 && col==2){
+            resultMatrix.setVisibility(View.VISIBLE);
+        }
+        else if (row==3 && col == 3){
+            result3x3.setVisibility(View.VISIBLE);
+        }
 
         dispresult(a);
-        a.clear();
 
     }
 
