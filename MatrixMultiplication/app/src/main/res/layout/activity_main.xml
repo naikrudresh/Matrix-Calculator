@@ -84,10 +84,287 @@
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/mat2x2_1"
+            android:id="@+id/result3x3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/reset3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="160dp"
+                android:layout_marginStart="160dp"
+                android:layout_marginTop="56dp"
+                android:onClick="resett"
+                android:text="RESET"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gridLayout5" />
+
+            <TextView
+                android:id="@+id/resultMatric3"
+                android:layout_width="187dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="63dp"
+                android:gravity="center"
+                android:text="Results"
+                android:textSize="40sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/gridLayout5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:columnCount="3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:rowCount="3">
+
+                <TextView
+                    android:id="@+id/result300"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:textSize="40sp"
+                    app:layout_column="0"
+                    app:layout_row="0" />
+
+                <TextView
+                    android:id="@+id/result301"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:textSize="40sp"
+                    app:layout_column="1"
+                    app:layout_row="0" />
+
+                <TextView
+                    android:id="@+id/result302"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:textSize="40sp"
+                    app:layout_column="2"
+                    app:layout_row="0" />
+
+                <TextView
+                    android:id="@+id/result310"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:textSize="40sp"
+                    app:layout_column="0"
+                    app:layout_row="1" />
+
+                <TextView
+                    android:id="@+id/result311"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:textSize="40sp"
+                    app:layout_column="1"
+                    app:layout_row="1" />
+
+                <TextView
+                    android:id="@+id/result312"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:textSize="40sp"
+                    app:layout_column="2"
+                    app:layout_row="1" />
+
+                <TextView
+                    android:id="@+id/result320"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:textSize="40sp"
+                    app:layout_column="0"
+                    app:layout_row="2" />
+
+                <TextView
+                    android:id="@+id/result321"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:textSize="40sp"
+                    app:layout_column="1"
+                    app:layout_row="2" />
+
+                <TextView
+                    android:id="@+id/result322"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:textSize="40sp"
+                    app:layout_column="2"
+                    app:layout_row="2" />
+
+            </androidx.gridlayout.widget.GridLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mat3x3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="invisible">
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/next3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="160dp"
+                android:layout_marginStart="160dp"
+                android:layout_marginTop="56dp"
+
+                android:onClick="next3"
+                android:text="NEXT"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gridLayout3" />
+
+            <Button
+                android:id="@+id/submit3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="160dp"
+                android:layout_marginStart="160dp"
+                android:layout_marginTop="56dp"
+                android:onClick="submit3"
+                android:text="Submit"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gridLayout3" />
+
+            <TextView
+                android:id="@+id/matric3"
+                android:layout_width="187dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="63dp"
+                android:gravity="center"
+                android:text="Matrix 1"
+                android:textSize="40sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/gridLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:columnCount="3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:rowCount="3">
+
+                <EditText
+                    android:id="@+id/z00"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="30sp"
+                    app:layout_column="0"
+                    app:layout_row="0" />
+
+                <EditText
+                    android:id="@+id/z01"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="30sp"
+                    app:layout_column="1"
+                    app:layout_row="0" />
+
+                <EditText
+                    android:id="@+id/z02"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="30sp"
+                    app:layout_column="2"
+                    app:layout_row="0" />
+
+                <EditText
+                    android:id="@+id/z10"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="30sp"
+                    app:layout_column="0"
+                    app:layout_row="1" />
+
+                <EditText
+                    android:id="@+id/z11"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="30sp"
+                    app:layout_column="1"
+                    app:layout_row="1" />
+
+                <EditText
+                    android:id="@+id/z12"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="30sp"
+                    app:layout_column="2"
+                    app:layout_row="1" />
+
+                <EditText
+                    android:id="@+id/z20"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="30sp"
+                    app:layout_column="0"
+                    app:layout_row="2" />
+
+                <EditText
+                    android:id="@+id/z21"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="30sp"
+                    app:layout_column="1"
+                    app:layout_row="2" />
+
+                <EditText
+                    android:id="@+id/z22"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="30sp"
+                    app:layout_column="2"
+                    app:layout_row="2" />
+
+            </androidx.gridlayout.widget.GridLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mat2x2_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/next"
@@ -129,8 +406,8 @@
 
             <androidx.gridlayout.widget.GridLayout
                 android:id="@+id/gridLayout"
-                android:layout_width="340dp"
-                android:layout_height="293dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 app:columnCount="2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -217,8 +494,8 @@
 
             <androidx.gridlayout.widget.GridLayout
                 android:id="@+id/gridLayout2"
-                android:layout_width="340dp"
-                android:layout_height="293dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 app:columnCount="2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -240,7 +517,7 @@
                     android:layout_height="70dp"
                     android:textSize="40sp"
                     app:layout_column="1"
-                    app:layout_row="0"/>
+                    app:layout_row="0" />
 
                 <TextView
                     android:id="@+id/result10"
@@ -248,7 +525,7 @@
                     android:layout_height="70dp"
                     android:textSize="40sp"
                     app:layout_column="0"
-                    app:layout_row="1"/>
+                    app:layout_row="1" />
 
                 <TextView
                     android:id="@+id/result11"
@@ -289,33 +566,6 @@
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button2x2" />
-
-        <Button
-            android:id="@+id/button4x4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="88dp"
-            android:onClick="mat4x4"
-            android:text="4X4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button3x3" />
-
-        <Button
-            android:id="@+id/button5x5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="95dp"
-            android:layout_marginTop="60dp"
-            android:onClick="mat5x5"
-            android:text="5X5"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button4x4" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
