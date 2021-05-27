@@ -29,10 +29,32 @@ public class MainActivity extends AppCompatActivity {
     int row, col;
     int b[][];
 
+    public void clear(){
+        if(row==2 && col==2) {
+            a11.getText().clear();
+            a10.getText().clear();
+            a01.getText().clear();
+            a00.getText().clear();
+        }
+        else {
+            z00.getText().clear();
+            z01.getText().clear();
+            z02.getText().clear();
+            z10.getText().clear();
+            z11.getText().clear();
+            z12.getText().clear();
+            z20.getText().clear();
+            z21.getText().clear();
+            z22.getText().clear();
+        }
+    }
+
     public void resett(View view){
         matrices.setVisibility(View.INVISIBLE);
         mat3x3.setVisibility(View.INVISIBLE);
         page1.setVisibility(View.VISIBLE);
+        resultMatrix.setVisibility(View.INVISIBLE);
+        result3x3.setVisibility(View.INVISIBLE);
         clear();
     }
 
@@ -57,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             result321.setText(Integer.toString((arrayList.get(2).get(1))));
             result322.setText(Integer.toString((arrayList.get(2).get(2))));
         }
-        row = col = 0;
+//        row = col = 0;
     }
 
     public void singleMatrix(View view){
@@ -83,10 +105,7 @@ public class MainActivity extends AppCompatActivity {
         matric.setText("MATRIX 1");
         mat3x3.setVisibility(View.INVISIBLE);
 
-        a00.setText(null);
-        a01.setText(null);
-        a10.setText(null);
-        a11.setText(null);
+        clear();
 
 
     }
@@ -103,21 +122,13 @@ public class MainActivity extends AppCompatActivity {
         mat3x3.setVisibility(View.VISIBLE);
         matric3.setText("MATRIX 1");
 
-        z00.setText(null);
-        z01.setText(null);
-        z02.setText(null);
-        z10.setText(null);
-        z11.setText(null);
-        z12.setText(null);
-        z20.setText(null);
-        z21.setText(null);
-        z22.setText(null);
+        clear();
 
 
 
     }
 
-   public void add(){
+    public void add(){
        a.clear();
        for(int i =0; i<row;i++){
            a.add(new ArrayList<Integer>());
@@ -127,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
        }
    }
 
-   public void sub(){
+    public void sub(){
        a.clear();
        for(int i =0; i<row;i++){
            a.add(new ArrayList<Integer>());
@@ -137,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
        }
    }
 
-   public void mul(){
+    public void mul(){
 
        int b[][] = new int[row][col];
 
@@ -160,21 +171,9 @@ public class MainActivity extends AppCompatActivity {
        }
    }
 
-    public void clear(){
-        a11.getText().clear();
-        a10.getText().clear();
-        a01.getText().clear();
-        a00.getText().clear();
-
-        z00.getText().clear();
-        z01.getText().clear();
-        z02.getText().clear();
-        z10.getText().clear();
-        z11.getText().clear();
-        z12.getText().clear();
-        z20.getText().clear();
-        z21.getText().clear();
-        z22.getText().clear();
+    public void back(View view){
+        matrices.setVisibility(View.INVISIBLE);
+        operation.setVisibility(View.VISIBLE);
     }
 
     public void addition(View view){
