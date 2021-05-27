@@ -31,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
         clear();
     }
 
+    public void dispresult(ArrayList<ArrayList<Integer>> arrayList){
+        result00.setText(Integer.toString(arrayList.get(0).get(0)));
+        result01.setText(Integer.toString(arrayList.get(0).get(1)));
+        result10.setText(Integer.toString(arrayList.get(1).get(0)));
+        result11.setText(Integer.toString(arrayList.get(1).get(1)));
+    }
+
     public void singleMatrix(View view){
 
 
@@ -59,11 +66,6 @@ public class MainActivity extends AppCompatActivity {
         a10.setText(null);
         a11.setText(null);
 
-
-
-
-//        mat2x2_1.setVisibility(View.VISIBLE);
-//        mat2x2_2.setVisibility(View.INVISIBLE);
 
     }
 
@@ -103,21 +105,58 @@ public class MainActivity extends AppCompatActivity {
         mat2x2_1.setVisibility(View.INVISIBLE);
         resultMatrix.setVisibility(View.VISIBLE);
 
-        result00.setText(Integer.toString(a.get(0).get(0)));
-        result01.setText(Integer.toString(a.get(0).get(1)));
-        result10.setText(Integer.toString(a.get(1).get(0)));
-        result11.setText(Integer.toString(a.get(1).get(1)));
-//        submit.setVisibility(View.INVISIBLE);
-//        resett.setVisibility(View.VISIBLE);
-
+        dispresult(a);
+        a.clear();
 
     }
 
     public void subtract(View view){
+        ArrayList<ArrayList<Integer>> a = new ArrayList<ArrayList<Integer>>();
+
+        for(int i =0; i<2;i++){
+            a.add(new ArrayList<Integer>());
+            for(int j=0;j<2;j++){
+                a.get(i).add(j, array1.get(i).get(j)-array2.get(i).get(j));
+            }
+        }
+        System.out.println(a.toString());
+
+        operation.setVisibility(View.INVISIBLE);
+        matrices.setVisibility(View.VISIBLE);
+
+        mat2x2_1.setVisibility(View.INVISIBLE);
+        resultMatrix.setVisibility(View.VISIBLE);
+
+        dispresult(a);
 
     }
 
     public void multiply(View view){
+        ArrayList<ArrayList<Integer>> a = new ArrayList<ArrayList<Integer>>();
+        int [][]b = {{0,0},{0,0}} ;
+
+        for (int i = 0; i < 2; i++) {
+            a.add(new ArrayList<Integer>());
+            for (int j = 0; j < 2; j++) {
+                for (int k = 0; k < 2; k++) {
+                    b[i][j] += array1.get(i).get(k)*array2.get(k).get(j);
+                }
+                System.out.println(b[i][j]);
+                a.get(i).add(j, b[i][j]);
+            }
+
+        }
+
+        System.out.println(a.toString());
+
+        operation.setVisibility(View.INVISIBLE);
+        matrices.setVisibility(View.VISIBLE);
+
+        mat2x2_1.setVisibility(View.INVISIBLE);
+        resultMatrix.setVisibility(View.VISIBLE);
+
+        dispresult(a);
+        a.clear();
 
     }
 
@@ -136,11 +175,8 @@ public class MainActivity extends AppCompatActivity {
 
         matric.setText("MATRIX 2");
 
-        next.setVisibility(View.INVISIBLE);
-
         array1.clear();
         array2.clear();
-
 
         array1.add(new ArrayList<Integer>(Arrays.asList(Integer.parseInt(a00.getText().toString()),Integer.parseInt(a01.getText().toString()))));
         array1.add(new ArrayList<Integer>(Arrays.asList(Integer.parseInt(a10.getText().toString()),Integer.parseInt(a11.getText().toString()))));
